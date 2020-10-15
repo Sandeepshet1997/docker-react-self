@@ -1,0 +1,19 @@
+version: '3.7'
+services: 
+    web:
+        container_name: reactWebServer
+        build: .
+        stdin_open: true
+        tty: true
+        ports: 
+            - "3000:3000"
+        volumes: 
+            - '.:/app'
+            - '/app/node_modules' 
+    test:
+        container_name: reactTesting
+        build: .
+        volumes: 
+            - '.:/app'
+            - '/app/node_modules' 
+        command: ["npm","run","test"]    

@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+        web:
+                container_name: 'react_web_server_prod'
+                build: ./Dockerfile.prod
+                stdin_open: true
+                tty: true
+                ports:
+                        - "3000:3000"
+

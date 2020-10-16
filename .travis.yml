@@ -7,6 +7,6 @@ before_install:
   - docker build -t stephengrider/docker-react -f dockerfile .
 
 script:
-  - docker run stephengrider/docker-react npm run test -- --coverage
+  - docker run stephengrider/docker-react npm run test --env=jsdom --coverage 
 
 
